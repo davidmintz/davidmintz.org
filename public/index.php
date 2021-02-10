@@ -20,6 +20,14 @@ $weather = $cache->get('weather_data',function(ItemInterface $item) use ($cache_
 
     }
 });
+// courtesy of a comment on https://gist.github.com/smallindine/d227743c28418f3426ed36b8969ded1a
+function convertDegreesToWindDirection($degrees) {
+    $directions = ['north', 'north/northeast', 'northeast', 'east/northeast', 'east', 
+    'east/southeast', 'southeast', 'south/souteast', 'south', 'south/southwest', 'southwest', 'west/southwest', 'west',
+     'west/northwest', 'northwest', 'north/northwest', 'north'];
+	return $directions[round($degrees / 22.5)];
+}
+
 /**
  stdClass Object
 (
@@ -79,6 +87,7 @@ $weather = $cache->get('weather_data',function(ItemInterface $item) use ($cache_
     [name] => Oak Bluffs
     [cod] => 200
 )
+
  */
 ?>
 <!doctype html>
@@ -101,19 +110,46 @@ $weather = $cache->get('weather_data',function(ItemInterface $item) use ($cache_
         </div>
         <div class="row">
 
-            <main class="col-md-7 offset-md-3 pt-3">
-                <p>
-                <?php if ($weather):?>
-                    As of <?php echo date('g:i a',$weather->dt) ?> the local temperature is about <?=$weather->main->temp ?> &deg; F.
-                <?php endif;?>
-                </p>
-                 <p>If you are looking for the David Mintz who grew up in Silver Spring, Maryland; lived in Chile as a teenager; 
+            <main class="col-md-6 offset-md-3 pt-3">
+                
+                 <p>If you're looking for the David Mintz who grew up in Silver Spring, Maryland; lived in Chile as a teenager; 
                      got degrees in classical guitar at the Hartt School of Music and at the University of Arizona; became a 
-                    Spanish&lt;&gt;English staff court interpreter for the US District Court in New York City; and retired from the 
-                    federal judiciary in July 2020 &mdash; this is the one.</p>
-                    
-                    <p>My wife Amy Hartford and I live with our dog and three cats in Oak Bluffs, on Martha's Vineyard, 
-                        an island south of Cape Cod, Massachussetts.</p>
+                    Spanish&lt;&gt;English interpreter for the US District Court in New York City; and retired from the 
+                    federal judiciary in July 2020 &mdash; this is he.</p>
+                    <p>
+                    My wife Amy Hartford and I live in near-continuous bliss with our dog and three cats in a little house on a dirt road in 
+                    Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts. We have four fascinating children: 
+                    three from her previous marriage and one from mine.
+                    </p>
+                    <img class="img-fluid mb-2" src="images/with-lin-chi.jpg" alt="David is a handsome old guy with a gorgeous old cat">
+                 
+
+                        <?php if ($weather): 
+                    $celsius = round(($weather->main->temp - 32) / 1.8);
+                    $wind_direction = convertDegreesToWindDirection($weather->wind->deg);
+                    $wind_speed = $weather->wind->speed . ' mph';
+                    ?>
+                <p>
+                    As of <?php echo date('d-M-Y \a\t g:i a',$weather->dt) ?> the local temperature was 
+                    about <?=round($weather->main->temp) ?>&deg;F/<?=$celsius?>&deg;C
+                    with <?=$weather->main->humidity?>% humidity and <?=$weather->weather[0]->description?> with 
+                    winds <?=$wind_direction?> at <?=$wind_speed?>. So much for the weather.
+                </p>
+                <h3>politics</h3>
+                <p>Now let's talk about politics. I'm a socialist, a Marxist-Trotskyist, 
+                    and I wholeheartedly support the <a href="https://socialequality.com">Socialist Equality Party</a>. There is a 
+                    great deal more to say, but for now suffice it to say that I have lived in the world long enough to understand 
+                    that capitalism is a system under which the social needs of the many are subordinated for the sake of the 
+                    enrichment of a few at the top; inequality is an essential feature. The capitalist profit system is an utter disaster 
+                    for the great majority of the world's population and the environment. The only rational, viable alternative is 
+                    socialism. I recommend the World Socialist Web Site (<a href="https://wsws.org">wsws.org</a>) for further reading; 
+                    it offers singularly honest and clear-minded reporting and commentary. </p>
+                <?php endif;?>
+                <h3>other stuff that interests me</h3>
+                <p>I have had the good fortune to do a number of interesting things in the course of my life. I have performed as 
+                    a classical guitarist; made over 1100 skydives; taken psychedelic drugs (LSD being my hands-down favorite); 
+                    practiced Zen; run marathons and ultra-marathons; and probably some other cool shit that escapes me at the moment.
+                </p>
             </main>
 
         </div>
