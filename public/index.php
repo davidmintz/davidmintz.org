@@ -8,10 +8,11 @@ catch (\Exception $e) {  }
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="David E. Mintz is a human being residing on Martha's Vineyard, an island off the coast of Massachussetts, USA. 
+    He is a web developer, Marxist, meditator, father, stepfather, husband, former marathoner, and former Spanish-English interpreter for the 
+    federal court in New York City.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <link href="css/style.css" rel="stylesheet">
-    
+    <link href="css/style.css" rel="stylesheet">   
     <title>David Mintz, homo sapiens</title>
   </head>
   <body>
@@ -23,9 +24,7 @@ catch (\Exception $e) {  }
             </div>
         </div>
         <div class="row">
-
-            <main class="col-md-7 offset-md-2 pt-3 pb-4 border-bottom mb-2">
-                
+            <main class="col-md-7 offset-md-2 pt-3 pb-4 border-bottom mb-2">               
                  <p>If you're looking for the David Mintz who grew up in Silver Spring, Maryland; lived in Chile as a teenager; 
                      got degrees in classical guitar at the Hartt School of Music and at the University of Arizona; became a 
                     Spanish&lt;&gt;English interpreter for the US District Court in New York City; and retired from the 
@@ -147,7 +146,7 @@ catch (\Exception $e) {  }
                 there and been successful.</p>
                 <p>Was I a good player? You can listen to this recording of me playing J. S. Bach, <em>Prélude, Fugue and Allegro, BWV 998</em> at a public 
                 recital in 1987, and decide for yourself.</p>
-                <div class="text-center">
+                <div class="text-center mb-2">
                     <audio src="media/prelude-fugue-and-allegro.mp3" controls></audio>
                 </div>
                 <p>I don't think a musician can ever stop being a musician in some sense. Music is not just a pleasant thing you enjoy; 
