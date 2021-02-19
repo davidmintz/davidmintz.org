@@ -1,109 +1,7 @@
 <?php require '../vendor/autoload.php' ;
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Symfony\Contracts\Cache\ItemInterface;
-use GuzzleHttp\Client;
-
-$cache_dir = __DIR__.'/../data/cache';
-$cache = new FilesystemAdapter('', 600, __DIR__.'/../data/cache');
-
-$weather = $cache->get('weather_data',function(ItemInterface $item) use ($cache_dir) {
-    try {
-
-        $config = (require(__DIR__.'/../config/config.local.php'))['weather'];    
-        $client = new Client();    
-        $response = $client->get("https://api.openweathermap.org/data/2.5/weather?q=Oak+Bluffs,MA,US&units=imperial&appid={$config['api_key']}");
-        $status = $response->getStatusCode();
-        if (200 == $status) {
-            return json_decode((string)$response->getBody());
-        }
-    } catch (\Exception $e) {
-
-    }
-});
-// courtesy of a comment on https://gist.github.com/smallindine/d227743c28418f3426ed36b8969ded1a
-function degreesToWindDirection($degrees) {
-    $directions = ['north', 'north/northeast', 'northeast', 'east/northeast', 'east', 
-    'east/southeast', 'southeast', 'south/souteast', 'south', 'south/southwest', 'southwest', 'west/southwest', 'west',
-     'west/northwest', 'northwest', 'north/northwest', 'north'];
-	return $directions[round($degrees / 22.5)];
-}
-
-function compose(stdClass $data)
-{
-    $celsius = round(($data->main->temp - 32) / 1.8);
-    $wind_direction = degreesToWindDirection($data->wind->deg);
-    $wind_speed = $data->wind->speed . ' mph';
-    ob_start();?>
-    <p id="weather" class="my-2">
-        As of <?php echo date('d-M-Y \a\t g:i a',$data->dt) ?> the local temperature was 
-        about <?=round($data->main->temp) ?>&deg;F/<?=$celsius?>&deg;C
-        with <?=$data->main->humidity?>% humidity and <?=$data->weather[0]->description?> with 
-        winds <?=$wind_direction?> at <?=$wind_speed?>. So much for the weather.
-    </p>
-    <?php return ob_get_clean();
-}
-
-/**
- stdClass Object
-(
-    [coord] => stdClass Object
-        (
-            [lon] => -70.562
-            [lat] => 41.4543
-        )
-
-    [weather] => Array
-        (
-            [0] => stdClass Object
-                (
-                    [id] => 800
-                    [main] => Clear
-                    [description] => clear sky
-                    [icon] => 01n
-                )
-
-        )
-
-    [base] => stations
-    [main] => stdClass Object
-        (
-            [temp] => 19.17
-            [feels_like] => 9.66
-            [temp_min] => 12.2
-            [temp_max] => 27
-            [pressure] => 1031
-            [humidity] => 92
-        )
-
-    [visibility] => 10000
-    [wind] => stdClass Object
-        (
-            [speed] => 7.56
-            [deg] => 315
-        )
-
-    [clouds] => stdClass Object
-        (
-            [all] => 1
-        )
-
-    [dt] => 1612845742
-    [sys] => stdClass Object
-        (
-            [type] => 1
-            [id] => 5009
-            [country] => US
-            [sunrise] => 1612784761
-            [sunset] => 1612822018
-        )
-
-    [timezone] => -18000
-    [id] => 4946056
-    [name] => Oak Bluffs
-    [cod] => 200
-)
-
- */
+$config = (require(__DIR__.'/../config/config.local.php'))['weather']; 
+try { $weather = new DMz\WeatherReport($config); } 
+catch (\Exception $e) {  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -134,65 +32,68 @@ function compose(stdClass $data)
                     federal judiciary in July 2020 &mdash; this is he.</p>
                     <p>
                     My wife Amy Hartford and I live in near-continuous bliss with our dog and three cats in a little house on a dirt road in 
-                    Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts. We have four fascinating children: 
+                    Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts, USA. Before washing ashore here, 
+                    I lived in New Jersey for 30 years, mostly in Jersey City followed by South Orange. Amy and I have four fascinating children: 
                     three from her previous marriage and one from mine.
                     </p>
                     <!-- <img class="img-fluid mb-2" src="images/with-lin-chi.jpg" alt="David is a handsome old guy with a gorgeous old cat"> -->
                     <div id="carousel-mv" class="carousel slide" data-bs-wrap="true" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="0" class="active" aria-current="true" aria-label="photo 1"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="1" aria-label="photo 2"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="2" aria-label="photo 3"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="3" aria-label="photo 4"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="4" aria-label="photo 5"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="5" aria-label="photo 6"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="6" aria-label="photo 7"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="7" aria-label="photo 8"></button>
-                        <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="8" aria-label="photo 9"></button>
+                        <!-- <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="0" class="active" aria-current="true" aria-label="photo 1"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="1" aria-label="photo 2"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="2" aria-label="photo 3"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="3" aria-label="photo 4"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="4" aria-label="photo 5"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="5" aria-label="photo 6"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="6" aria-label="photo 7"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="7" aria-label="photo 8"></button>
+                            <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="8" aria-label="photo 9"></button>
+                        </div> -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">                            
+                                <img src="images/20201106_102310.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20201111_134532.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20201110_092922.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20201120_122816.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20201205_224635.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20201209_133057.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20201212_092711.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20210101_132545.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20210207_160128.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item">                            
+                                <img src="images/20210211_105700.jpg" class="d-block w-100 img-fluid" alt="...">
+                            </div>                                                                       
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-mv"  data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden sr-only">previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-mv"  data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden sr-only">next</span>
+                        </button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">                            
-                            <img src="images/20201106_102310.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20201111_134532.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20201110_092922.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20201120_122816.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20201205_224635.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20201209_133057.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20201212_092711.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20210101_132545.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20210207_160128.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-                        <div class="carousel-item">                            
-                            <img src="images/20210211_105700.jpg" class="d-block w-100 img-fluid" alt="...">
-                        </div>                                                                       
-                    </div>
-                    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carousel-mv"  data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden sr-only">previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-mv"  data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden sr-only">next</span>
-                    </button> -->
-                    </div>
-
-                <?php if ($weather): ?><?= compose($weather) ?><?php endif;?>
+                    
+                <?php if (!empty($weather)) : $report = $weather->getReport(); ?>
+                <p class="mt-2" id="weather"><?=$report?></p>
+                <?php endif;?>
                 <h3>politics</h3>
                 <p>Now let's talk about politics. I'm a socialist, a Marxist-Trotskyist, 
                     and I wholeheartedly support the <a href="https://socialequality.com">Socialist Equality Party</a>. There is a 
@@ -251,5 +152,6 @@ function compose(stdClass $data)
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+      <script src="js/jquery-3.5.1.min.js"></script>
   </body>
 </html>
