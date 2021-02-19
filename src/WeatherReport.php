@@ -60,7 +60,7 @@ class WeatherReport
      * @param stdClass $data
      * @return String
      */
-    public function composeReport(stdClass $data) : String
+    public function composeReport(stdClass $data) :?  String
     {
        
         $celsius = round(($data->main->temp - 32) / 1.8);  
@@ -86,7 +86,7 @@ class WeatherReport
         
             $cache = new FilesystemAdapter('', 600, $this->cache_dir);
             $report = $cache->get('weather_data',
-                function(ItemInterface $i){
+                function(ItemInterface $i) {
                     $client = new Client();
                     $url = "https://api.openweathermap.org/data/2.5/weather?q=Oak+Bluffs,MA,US&units=imperial&appid={$this->api_key}";
                     try {
