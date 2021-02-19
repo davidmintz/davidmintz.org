@@ -164,7 +164,7 @@ catch (\Exception $e) {  }
             </main>                    
         </div>
         <div class="row">
-            <footer class="col-md-7 offset-md-2 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608 &bull; <a href="gpg.txtgit">PGP key</a></footer>
+            <footer class="col-md-7 offset-md-2 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608 &bull; <a href="gpg.txt">PGP key</a></footer>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
