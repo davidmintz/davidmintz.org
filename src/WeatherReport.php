@@ -1,5 +1,4 @@
 <?php /** src/WeatherReport.php */
-
 declare(strict_types=1);
 
 namespace DMz;
@@ -10,7 +9,6 @@ use GuzzleHttp\Client;
 use stdClass;
 
 /** Simple weather reporting service. */
-
 class WeatherReport 
 {
 
@@ -57,20 +55,19 @@ class WeatherReport
     }
 
     /**
-     * Composes a weather report
-     *
-     * @param object $data
+     * Composes a weather report.
+     * 
+     * @param stdClass $data
      * @return String
      */
-    public function getReport() : String
+    public function composeReport(stdClass $data) : String
     {
-        $data = $this->getData();
+       
         $celsius = round(($data->main->temp - 32) / 1.8);  
         $farenheit = round($data->main->temp);    
         $wind_direction = $this->degreesToWindDirection($data->wind->deg);
         $wind_speed = $data->wind->speed . ' mph';
         $when =  date('d-M-Y \a\t g:i a',$data->dt);
-
         $report = "As of $when, the local temperature was about $farenheit&deg;F/"
             . "$celsius&deg;C with {$data->main->humidity}% humidity and "
             . "{$data->weather[0]->description} with winds $wind_direction "
@@ -80,15 +77,15 @@ class WeatherReport
     }
 
     /**
-     * Gets weather data.
+     * Gets weather report.
      *
-     * @return stdClass
+     * @return String
      */
-    public function getData() : stdClass
+    public function getReport() : String
     {
         
             $cache = new FilesystemAdapter('', 600, $this->cache_dir);
-            $weather = $cache->get('weather_data',
+            $report = $cache->get('weather_data',
                 function(ItemInterface $i){
                     $client = new Client();
                     $url = "https://api.openweathermap.org/data/2.5/weather?q=Oak+Bluffs,MA,US&units=imperial&appid={$this->api_key}";
@@ -96,18 +93,21 @@ class WeatherReport
                         $response = $client->get($url);
                         $status = $response->getStatusCode();
                         if (200 == $status) {
-                            return json_decode((string)$response->getBody());
+                            $data = json_decode((string)$response->getBody());
+                            return  $this->composeReport($data);
                         }                
                     } catch (\Exception $e) {
                         // to do: log it
+                        return '';
                     }
                 }
             );
         
-       return $weather;
+       return $report;
     }
 }
-/**
+/** returned data looks like this:
+ 
  stdClass Object
 (
     [coord] => stdClass Object

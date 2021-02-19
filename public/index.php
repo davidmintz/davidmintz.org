@@ -37,7 +37,7 @@ catch (\Exception $e) {  }
                     three from her previous marriage and one from mine.
                     </p>
                     <!-- <img class="img-fluid mb-2" src="images/with-lin-chi.jpg" alt="David is a handsome old guy with a gorgeous old cat"> -->
-                    <div id="carousel-mv" class="carousel slide" data-bs-wrap="true" data-bs-ride="carousel">
+                    <div id="carousel-mv" class="carousel slide mb-3" data-bs-wrap="true" data-bs-ride="carousel">
                         <!-- <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="0" class="active" aria-current="true" aria-label="photo 1"></button>
                             <button type="button" data-bs-target="#carousel-mv" data-bs-slide-to="1" aria-label="photo 2"></button>
@@ -91,9 +91,10 @@ catch (\Exception $e) {  }
                         </button>
                     </div>
                     
-                <?php if (!empty($weather)) : $report = $weather->getReport(); ?>
-                <p class="mt-2" id="weather"><?=$report?></p>
-                <?php endif;?>
+            <?php if (!empty($weather)) : $report = $weather->getReport(); ?>
+            <h3 id="weather">the weather</h3>
+                <p><?=$report?></p>
+            <?php endif;?>
                 <h3>politics</h3>
                 <p>Now let's talk about politics. I'm a socialist, a Marxist-Trotskyist, 
                     and I wholeheartedly support the <a href="https://socialequality.com">Socialist Equality Party</a>. There is a 
@@ -103,7 +104,7 @@ catch (\Exception $e) {  }
                     for the great majority of the world's population and the environment. The only rational, viable alternative is 
                     socialism. I recommend the World Socialist Web Site (<a href="https://wsws.org">wsws.org</a>) for further reading; 
                     it offers singularly honest, clear-minded reporting and commentary. </p>
-                <h3>other stuff that interests me</h3>
+                <h2>other stuff that interests me</h2>
                 <p>I have had the good fortune to do a number of interesting things in the course of my life. I have performed as 
                     a classical guitarist; made over 1100 skydives; taken psychedelic drugs (LSD being my favorite); 
                     practiced Zen; run marathons and ultra-marathons; coded web applications that have made people's work 
