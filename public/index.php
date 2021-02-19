@@ -50,10 +50,10 @@ catch (\Exception $e) {  }
                         </div> -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">                            
-                                <img src="images/20201106_102310.jpg" class="d-block w-100 img-fluid" alt="...">
+                                <img src="images/20201111_134532.jpg" class="d-block w-100 img-fluid" alt="...">
                             </div>
                             <div class="carousel-item">                            
-                                <img src="images/20201111_134532.jpg" class="d-block w-100 img-fluid" alt="...">
+                                <img src="images/20201106_102310.jpg" class="d-block w-100 img-fluid" alt="...">
                             </div>
                             <div class="carousel-item">                            
                                 <img src="images/20201110_092922.jpg" class="d-block w-100 img-fluid" alt="...">
@@ -150,17 +150,17 @@ catch (\Exception $e) {  }
                     <audio src="media/prelude-fugue-and-allegro.mp3" controls></audio>
                 </div>
                 <p>I don't think a musician can ever stop being a musician in some sense. Music is not just a pleasant thing you enjoy; 
-                it is vital in an almost biological sense. And so, after a thirty year hiatus, I decided it would be fun to pick up the guitar 
+                it is vital in an almost biological sense. And so, after a thirty year hiatus, I decided to pick up the guitar 
                 again. But not classical, no. It would be too difficult to regain a level high enough to make it satisfying. Instead I 
-                decided to get some instruction in jazz and have fun, liberated from any need to achieve anything. So here's 
+                decided to get some instruction in jazz and have fun, liberated from the need to achieve anything. So here's 
                 <a href="https://lbry.tv/@mintz:3/so-what.take-01.2020-04-09-220005:e">a little video of me having fun</a> 
-                making music once again (albeit recorded on the crappiest of equipment), so many years later .</p>
+                making music once again (albeit recorded on the crappiest of equipment).</p>
                 <h4>want more of my bloviations?</h4>
                 The blog is at <a href="https://blog.vernontbludgeon.com/">blog.vernontbludgeon.com</a>
             </main>                    
         </div>
         <div class="row">
-            <footer class="col-md-7 offset-md-3 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608</footer>
+            <footer class="col-md-7 offset-md-2 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608 &bull; <a href="gpg.txt">PGP key</a></footer>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
