@@ -67,7 +67,7 @@ class WeatherReport
         $farenheit = round($data->main->temp);    
         $wind_direction = $this->degreesToWindDirection($data->wind->deg);
         $wind_speed = $data->wind->speed . ' mph';
-        $when =  date('d-M-Y \a\t g:i a',$data->dt);
+        $when =  date('d-M-Y \a\t g:i a EST',$data->dt);
         $report = "As of $when, the local temperature was about $farenheit&deg;F/"
             . "$celsius&deg;C with {$data->main->humidity}% humidity and "
             . "{$data->weather[0]->description} with winds $wind_direction "
