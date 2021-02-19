@@ -95,6 +95,7 @@ catch (\Exception $e) {  }
             <h3 id="weather">the weather</h3>
                 <p><?=$report?></p>
             <?php endif;?>
+            
                 <h3>politics</h3>
                 <p>Now let's talk about politics. I'm a socialist, a Marxist-Trotskyist, 
                     and I wholeheartedly support the <a href="https://socialequality.com">Socialist Equality Party</a>. There is a 
@@ -110,6 +111,14 @@ catch (\Exception $e) {  }
                     practiced Zen; run marathons and ultra-marathons; coded web applications that have made people's work 
                     less onerous; and probably some other cool shit that escapes me at the moment. It's a long, strange curriculum vitae.
                 </p>
+                <h4 id="web-development">web development</h4>
+                <p>I became a full-stack web developer because when I started working as a staff Spanish interpreter for the federal court, 
+                the manual, paper-based methods we were  using to run our busy office were becoming untenable.  But I was unable to find 
+                any software that served our purposes. So I set about coding our own court interpreter management system. The resulting app 
+                has been developed, revised, and battle-tested for over 20 years, and is freely available as an open-source project. 
+                I call it <span class="font-monospace"><a target="_blank" href="https://interpretersoffice.org">InterpretersOffice</a></span>.
+                The source code repository is <a a target="_blank" href="https://github.com/davidmintz/court-interpreters-office">on Github</a>.
+                By all means check it out and feel free to contact david@interpretersoffice.org with any questions.</p>
                 <h4 id="zen">zen</h4>
                 <p>Once upon a time I was a student at a zendo in New York City, drawn to it because I was curious about 
                     practicing meditation. I participated in formal sittings and certain Zen Buddhist rituals -- chanting and bowing 
@@ -141,11 +150,14 @@ catch (\Exception $e) {  }
                 <div class="text-center">
                     <audio src="media/prelude-fugue-and-allegro.mp3" controls></audio>
                 </div>
-                
-                
-                <h4 id="web-development">web development</h4>
-                <p>bla bla yadda yadda</p>
-
+                <p>I don't think a musician can ever stop being a musician in some sense. Music is not just a pleasant thing you enjoy; 
+                it is vital in an almost biological sense. And so, after a thirty year hiatus, I decided it would be fun to pick up the guitar 
+                again. But not classical, no. It would be too difficult to regain a level high enough to make it satisfying. Instead I 
+                decided to get some instruction in jazz and have fun, liberated from any need to achieve anything. So here's 
+                <a href="https://lbry.tv/@mintz:3/so-what.take-01.2020-04-09-220005:e">a little video of me having fun</a> 
+                making music once again (albeit recorded on the crappiest of equipment), so many years later .</p>
+                <h4>want more of my bloviations?</h4>
+                The blog is at <a href="https://blog.vernontbludgeon.com/">blog.vernontbludgeon.com</a>
             </main>                    
         </div>
         <div class="row">
