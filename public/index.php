@@ -139,7 +139,7 @@ catch (\Exception $e) {  }
                 athlete to be a marathoner at all. Of course it does require considerable effort and reasonably good general health to get fit enough 
                 to get through it, but this is well within the reach of ordinary people. I was pleasantly astounded to discover how 
                 hard it was <em>not</em> to run 50 kilometer trail races, as long as you pace yourself correctly. The risk of injury is 
-                substantial, true -- repetitive strain with road running, traumatic injuries from falling on the trails -- 
+                significant, true -- repetitive strain with road running, traumatic injuries from falling on the trails -- 
                 but it's manageable. So if this is something you've thought about but have never tried, I'd encourage you to go for it.
                 </p>
                 <h4 id="music">music</h4>
@@ -153,7 +153,7 @@ catch (\Exception $e) {  }
                 <div class="text-center mb-2">
                     <audio src="media/prelude-fugue-and-allegro.mp3" controls></audio>
                 </div>
-                <p>I don't think a musician can ever stop being a musician in some sense. Music is not just a pleasant thing you enjoy; 
+                <p>I don't think a musician can ever stop being a musician in some sense. Music is not just a source of enjoyment; 
                 it is vital in an almost biological sense. And so, after a thirty year hiatus, I decided to pick up the guitar 
                 again. But not classical, no. It would be too difficult to regain a level high enough to make it satisfying. Instead I 
                 decided to get some instruction in jazz and have fun, liberated from the need to achieve anything. So here's 
@@ -173,9 +173,9 @@ catch (\Exception $e) {  }
       $(function(){ 
           window.setInterval(()=>{
             $.get("/weather.php")
-            .then(html=>{$("#weather").next("p").html(html); console.debug("reloaded weather");})
+            .then(html=>$("#weather").next("p").html(html))
             .fail(()=>{});
-          },600000)
+          },300000)
       });
       </script>
   </body>
