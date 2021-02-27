@@ -8,6 +8,7 @@ catch (\Exception $e) {  }
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <meta name="description" content="David E. Mintz is a human being residing on Martha's Vineyard, an island off the coast of Massachussetts, USA. 
     He is, among other things, a web developer, Marxist, meditator, father, stepfather, husband, former marathoner, and former Spanish-English interpreter for the 
     federal court in New York City.">
@@ -16,7 +17,7 @@ catch (\Exception $e) {  }
     <meta property="og:image" content="https://davidmintz.org/images/20201111_134532.jpg">
     <meta property="og:url" content="https://davidmntz.org/index.php">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">   
+    <link href="css/style.css" rel="stylesheet"> 
     <title>David Mintz, homo sapiens</title>
   </head>
   <body>
@@ -154,7 +155,7 @@ catch (\Exception $e) {  }
                     <audio src="media/prelude-fugue-and-allegro.mp3" controls></audio>
                 </div>
                 <p>I don't think a musician can ever stop being a musician in some sense. Music is not just a source of enjoyment; 
-                it is vital in an almost biological sense. And so, after a thirty year hiatus, I decided to pick up the guitar 
+                it is vital in an almost biological sense. And so, after a 30 year hiatus, I decided to pick up the guitar 
                 again. But not classical, no. It would be too difficult to regain a level high enough to make it satisfying. Instead I 
                 decided to get some instruction in jazz and have fun, liberated from the need to achieve anything. So here's 
                 <a href="https://lbry.tv/@mintz:3/so-what.take-01.2020-04-09-220005:e">a little video of me having fun</a> 
