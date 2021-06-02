@@ -16,7 +16,7 @@ catch (\Exception $e) {  }
     <meta property="og:description" content="David E. Mintz is a human being residing in a state of near-continuous bliss on Martha's Vineyard, an island off the coast of Massachussetts, USA. ">
     <meta property="og:image" content="https://davidmintz.org/images/20201111_134532.jpg">
     <meta property="og:url" content="https://davidmntz.org/index.php">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet"> 
     <title>David Mintz, homo sapiens</title>
   </head>
@@ -168,8 +168,8 @@ catch (\Exception $e) {  }
             <footer class="col-md-7 offset-md-2 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608 &bull; <a href="gpg.txt">PGP key</a></footer>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-      <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
       <script>
       $(function(){ 
           window.setInterval(()=>{
