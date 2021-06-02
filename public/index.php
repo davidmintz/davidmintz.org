@@ -35,7 +35,7 @@ catch (\Exception $e) {  }
                     Spanish&lt;&gt;English interpreter for the US District Court in New York City; and retired from the 
                     federal judiciary in July 2020 &mdash; this is he.</p>
                     <p>
-                    My wife Amy Hartford and I live in near-continuous bliss with our dog and three cats in a little house on a dirt road in 
+                    My wife Amy Hartford and I live in near-continuous bliss with our dog and two cats in a little house on a dirt road in 
                     Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts, USA. Before washing ashore here, 
                     I lived in New Jersey for 30 years, mostly in Jersey City followed by South Orange. Amy and I have four fascinating children: 
                     three from her previous marriage and one from mine.
