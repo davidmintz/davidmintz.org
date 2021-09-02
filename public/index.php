@@ -33,7 +33,7 @@ catch (\Exception $e) {  }
                  <p>If you're looking for the David Mintz who grew up in Silver Spring, Maryland; lived in Chile as a teenager; 
                      got degrees in classical guitar at the Hartt School of Music and at the University of Arizona; became a 
                     Spanish&lt;&gt;English interpreter for the US District Court in New York City; and retired from the 
-                    federal judiciary in July 2020 &mdash; this is he.</p>
+                    federal judiciary in July 2020 &mdash; this is the one!</p>
                     <p>
                     My wife Amy Hartford and I live in near-continuous bliss with our dog and two cats in a little house on a dirt road in 
                     Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts, USA. Before washing ashore here, 
@@ -113,7 +113,7 @@ catch (\Exception $e) {  }
                 <p>I have had the good fortune to do a number of interesting things in the course of my life. I have performed as 
                     a classical guitarist; made over 1100 skydives; taken psychedelic drugs (LSD being my favorite); 
                     practiced Zen; run marathons and ultra-marathons; coded web applications that have made people's work 
-                    less onerous; and probably some other cool shit that escapes me at the moment. It's a long, strange curriculum vitae.
+                    less onerous; and plenty of other cool shit that I am too modest to brag about. It's a long, strange curriculum vitae.
                 </p>
                 <h4 id="web-development">web development</h4>
                 <p>I became a full-stack web developer because when I started working as a staff Spanish interpreter for the federal court, 
