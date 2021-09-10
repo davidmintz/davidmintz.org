@@ -110,10 +110,10 @@ catch (\Exception $e) {  }
                     socialism. I recommend the World Socialist Web Site (<a href="https://wsws.org">wsws.org</a>) for further reading; 
                     it offers singularly honest, clear-minded reporting and commentary. </p>
                 <h2>other stuff that interests me</h2>
-                <p>I have had the good fortune to do a number of interesting things in the course of my life. I have performed as 
+                <p>I have had the good fortune to do a number of interesting things in the course of my life: I've performed as 
                     a classical guitarist; made over 1100 skydives; taken psychedelic drugs (LSD being my favorite); 
                     practiced Zen; run marathons and ultra-marathons; coded web applications that have made people's work 
-                    less onerous; and plenty of other cool shit that I am too modest to brag about. It's a long, strange curriculum vitae.
+                    less onerous; and done plenty of other cool shit that I am too modest to brag about. It's a long, strange curriculum vitae.
                 </p>
                 <h4 id="web-development">web development</h4>
                 <p>I became a full-stack web developer because when I started working as a staff Spanish interpreter for the federal court, 
