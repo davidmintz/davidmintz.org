@@ -139,7 +139,7 @@ catch (\Exception $e) {  }
                 first marathon, the idea of running one was inconceivable. I must have mistakenly believed you had to be an extraordinary 
                 athlete to be a marathoner at all. Of course it does require considerable effort and reasonably good general health to get fit enough 
                 to get through it, but this is well within the reach of ordinary people. I was pleasantly astounded to discover how 
-                hard it was <em>not</em> to run 50 kilometer trail races, as long as you pace yourself correctly. The risk of injury is 
+                hard running 50 kilometer trail races was <em>not</em> to , as long as you pace yourself correctly. The risk of injury is 
                 significant, true -- repetitive strain with road running, traumatic injuries from falling on the trails -- 
                 but it's manageable. So if this is something you've thought about but have never tried, I'd encourage you to go for it.
                 </p>
