@@ -16,7 +16,7 @@ catch (\Exception $e) {  }
     <meta property="og:description" content="David E. Mintz is a human being residing in a state of near-continuous bliss on Martha's Vineyard, an island off the coast of Massachussetts, USA. ">
     <meta property="og:image" content="https://davidmintz.org/images/20201111_134532.jpg">
     <meta property="og:url" content="https://davidmntz.org/index.php">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet"> 
     <title>David Mintz, homo sapiens</title>
   </head>
@@ -33,9 +33,9 @@ catch (\Exception $e) {  }
                  <p>If you're looking for the David Mintz who grew up in Silver Spring, Maryland; lived in Chile as a teenager; 
                      got degrees in classical guitar at the Hartt School of Music and at the University of Arizona; became a 
                     Spanish&lt;&gt;English interpreter for the US District Court in New York City; and retired from the 
-                    federal judiciary in July 2020 &mdash; this is he.</p>
+                    federal judiciary in July 2020 &mdash; this is the one!</p>
                     <p>
-                    My wife Amy Hartford and I live in near-continuous bliss with our dog and three cats in a little house on a dirt road in 
+                    My wife Amy Hartford and I live in near-continuous bliss with our dog and two cats in a little house on a dirt road in 
                     Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts, USA. Before washing ashore here, 
                     I lived in New Jersey for 30 years, mostly in Jersey City followed by South Orange. Amy and I have four fascinating children: 
                     three from her previous marriage and one from mine.
@@ -110,10 +110,10 @@ catch (\Exception $e) {  }
                     socialism. I recommend the World Socialist Web Site (<a href="https://wsws.org">wsws.org</a>) for further reading; 
                     it offers singularly honest, clear-minded reporting and commentary. </p>
                 <h2>other stuff that interests me</h2>
-                <p>I have had the good fortune to do a number of interesting things in the course of my life. I have performed as 
+                <p>I have had the good fortune to do a number of interesting things in the course of my life: I've performed as 
                     a classical guitarist; made over 1100 skydives; taken psychedelic drugs (LSD being my favorite); 
                     practiced Zen; run marathons and ultra-marathons; coded web applications that have made people's work 
-                    less onerous; and probably some other cool shit that escapes me at the moment. It's a long, strange curriculum vitae.
+                    less onerous; and done plenty of other cool shit that I am too modest to brag about. It's a long, strange curriculum vitae.
                 </p>
                 <h4 id="web-development">web development</h4>
                 <p>I became a full-stack web developer because when I started working as a staff Spanish interpreter for the federal court, 
@@ -168,8 +168,8 @@ catch (\Exception $e) {  }
             <footer class="col-md-7 offset-md-2 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608 &bull; <a href="gpg.txt">PGP key</a></footer>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-      <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
       <script>
       $(function(){ 
           window.setInterval(()=>{
