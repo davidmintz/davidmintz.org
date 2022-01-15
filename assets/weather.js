@@ -1,9 +1,9 @@
 const $ = require('jquery');
 $(function(){
-    // console.warn("hello from weather.js!");
     window.setInterval(()=>{
+        console.log("and again... ");
         $.get("/weather")
             .then(html=>$("#weather").next("p").html(html))
             .fail(()=>{});
-    },300000)
+    },3000000)
 });
