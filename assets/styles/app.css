@@ -1,7 +1,10 @@
+/* this is how you do it, it appears... */
+@import "~bootstrap/dist/css/bootstrap.css";
+/* ------------------------------------ */
 #banner {
     background: url("../images/20201130_093445.east-chop.jpg") no-repeat;
     min-height : 180px;
-    
+
 }
 @media(min-width: 992px) {
     #banner {
@@ -11,12 +14,3 @@
         font-size: 4rem;
     }
 }
-
-/*
-<576px 	Small
-≥576px 	Medium
-≥768px 	Large
-≥992px 	X-Large
-≥1200px 	XX-Large
-≥1400px
-*/

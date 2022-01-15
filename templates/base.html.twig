@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <meta name="description" content="David E. Mintz is a human being residing on Martha's Vineyard, an island off the coast of Massachussetts, USA.
+    He is, among other things, a web developer, Marxist, meditator, father, stepfather, husband, former marathoner, and former Spanish-English interpreter for the
+    federal court in New York City.">
+        <meta property="og:title" content="David Mintz, homo sapiens">
+        <meta property="og:description" content="David E. Mintz is a human being residing in a state of near-continuous bliss on Martha's Vineyard, an island off the coast of Massachussetts, USA. ">
+        <meta property="og:image" content="https://davidmintz.org/images/20201111_134532.jpg">
+        <meta property="og:url" content="https://davidmntz.org/S">
+        <title>{% block title %}David Mintz, homo sapiens{% endblock %}</title>
+{#        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">#}
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <div class="container">
+        <div id="banner" class="row rounded-3 mt-1 text-center d-flex">
+            <div class="col align-self-center">
+                <h1  class="mb-0">David Mintz</h1>
+                <h3 class="mt-0"><em>homo sapiens</em></h3>
+            </div>
+        </div>
+        <div class="row">
+            <main class="col-md-7 offset-md-2 pt-3 pb-4 border-bottom mb-2">
+                {% block body %}
+
+                {% endblock %}
+            </main>
+        </div>
+
+    </div><!-- /.container -->
+
+        <div class="row">
+            <footer class="col-md-7 offset-md-2 text-center border-bottom">david@davidmintz.org &bull; 201 978-0608 &bull; <a href="gpg.txt">PGP key</a></footer>
+        </div>
+    </body>
+</html>
