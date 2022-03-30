@@ -9,6 +9,7 @@
         "ext-iconv": "*",
         "doctrine/annotations": "^1.13",
         "guzzlehttp/guzzle": "^7.4",
+        "knplabs/knp-menu-bundle": "^3.2",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
         "symfony/flex": "^2",
@@ -40,6 +41,7 @@
     },
     "autoload": {
         "psr-4": {
+            "DMz\\": "src/DMz",
             "App\\": "src/"
         }
     },
