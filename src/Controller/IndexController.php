@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\Weather;
+use DMz\Foo;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +16,6 @@ class IndexController extends AbstractController
     {
         $key = $this->getParameter('app.weather_api_key');
         $weather = new Weather($cache, $key);
-
         return $this->render('index/index.html.twig', [
             'weather' => $weather->getReport(),
         ]);
