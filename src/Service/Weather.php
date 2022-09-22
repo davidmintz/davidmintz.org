@@ -66,6 +66,7 @@ class Weather
 //        $cache = new FilesystemAdapter('', 600, $this->cache_dir);
         $report = $this->cache->get('weather_data',
             function(ItemInterface $i) {
+                $i->expiresAfter(300);
                 $client = new Client();
                 $url = "https://api.openweathermap.org/data/2.5/weather?q=Oak+Bluffs,MA,US&units=imperial&appid={$this->api_key}";
                 try {
