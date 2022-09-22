@@ -5,5 +5,5 @@ $(function(){
         $.get("/weather")
             .then(html=>$("#weather").next("p").html(html))
             .fail(()=>{});
-    },300 * 1000)
+    },120 * 1000)
 });
