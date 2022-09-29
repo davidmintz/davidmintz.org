@@ -14,3 +14,18 @@
         font-size: 4rem;
     }
 }
+
+@media screen {
+    .print-only {
+        display: none;
+    }
+}
+
+@media print {
+    .screen-only {
+        display: none;
+    }
+}
+.letter p {
+    font-family: "Noto Serif Georgian";
+}
