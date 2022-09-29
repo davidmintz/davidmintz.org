@@ -4,6 +4,7 @@ namespace App\Service;
 
 use GuzzleHttp\Client;
 use Psr\Cache\InvalidArgumentException;
+use stdClass;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
@@ -35,23 +36,20 @@ class Weather
     /**
      * Composes a weather report.
      *
-     * @param \stdClass $data
+     * @param stdClass $data
      * @return String
      */
-    public function composeReport(\stdClass $data) :  String
+    public function composeReport(stdClass $data) :  String
     {
-
         $celsius = round(($data->main->temp - 32) / 1.8);
-        $farenheit = round($data->main->temp);
+        $fahrenheit = round($data->main->temp);
         $wind_direction = $this->degreesToWindDirection($data->wind->deg);
         $wind_speed = $data->wind->speed . ' mph';
         $when =  date('d-M-Y \a\t g:i a',$data->dt);
-        $report = "As of $when EST, the local temperature was about $farenheit&deg;F/"
+        return "As of $when EST, the local temperature was about $fahrenheit&deg;F/"
             . "$celsius&deg;C with {$data->main->humidity}% humidity and "
             . "{$data->weather[0]->description} with winds $wind_direction "
             . "at $wind_speed.";
-
-        return $report;
     }
 
     /**
@@ -63,8 +61,7 @@ class Weather
     public function getReport() : String
     {
 
-//        $cache = new FilesystemAdapter('', 600, $this->cache_dir);
-        $report = $this->cache->get('weather_data',
+        return $this->cache->get('weather_data',
             function(ItemInterface $i) {
                 $i->expiresAfter(300);
                 $client = new Client();
@@ -82,7 +79,5 @@ class Weather
                 }
             }
         );
-
-        return $report;
     }
 }
