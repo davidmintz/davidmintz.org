@@ -34,4 +34,11 @@ class IndexController extends AbstractController
         return $this->render('index/privacy.html.twig');
     }
 
+    #[Route('/letter-sdny',name:'letter-sdny')]
+    public function letter_sdny(): Response
+    {
+        return $this->render('index/letter-sdny.html.twig');
+    }
+
+
 }
