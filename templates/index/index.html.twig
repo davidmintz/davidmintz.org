@@ -4,16 +4,21 @@
     {{ encore_entry_script_tags('weather') }}
 {% endblock %}
 {% block body %}
-    <p>If you're looking for the David Mintz who grew up in Silver Spring, Maryland; lived in Chile as a teenager;
+    <div itemscope itemtype="https://schema.org/Person">
+    <p>If you're looking for the <span itemprop="givenName">David</span> <span itemprop="familyName">Mintz</span> who
+        grew up in Silver Spring, Maryland; lived in Chile as a teenager;
         got degrees in classical guitar at the Hartt School of Music and at the University of Arizona; became a
         Spanish&lt;&gt;English interpreter for the US District Court in New York City; and retired from the
         federal judiciary in July 2020:&nbsp;&nbsp;this is the one!</p>
     <p>
-        My wife Amy Hartford and I live in near-continuous bliss with our dog and two cats in a little house on a dirt road in
+        My wife <span itemprop="spouse" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Amy Hartford</span>
+        </span> and I live in near-continuous bliss with our dog and two cats in a little house on a dirt road in
         Oak Bluffs, on Martha's Vineyard, an island south of Cape Cod, Massachussetts, USA. Before washing ashore here,
         I lived in New Jersey for 30 years, mostly in Jersey City followed by South Orange. Amy and I have four fascinating children:
         three from her previous marriage and one from mine.
     </p>
+    </div>
     <!-- <img class="img-fluid mb-2" src="images/with-lin-chi.jpg" alt="David is a handsome old guy with a gorgeous old cat"> -->
     <div id="carousel-mv" class="carousel slide mb-3" data-bs-wrap="true" data-bs-ride="carousel">
         <!-- <div class="carousel-indicators">
@@ -88,13 +93,14 @@
         less onerous; and done plenty of other cool shit that I am too modest to brag about. It's a long, strange curriculum vitae.
     </p>
     <h4 id="web-development">web development</h4>
+
     <p>I became a full-stack web developer because when I started working as a staff Spanish interpreter for the federal court,
         the manual, paper-based methods we were  using to run our busy office were becoming untenable.  But I was unable to find
         any software that served our purposes. So I set about coding our own court interpreter management system. The resulting app
         has been developed, revised, and battle-tested for over 20 years, and is freely available as an open-source project.
-        I call it <span class="font-monospace"><a target="_blank" href="https://interpretersoffice.org">InterpretersOffice</a></span>.
-        The source code repository is <a a target="_blank" href="https://github.com/davidmintz/court-interpreters-office">on Github</a>.
-        By all means check it out and feel free to contact david@interpretersoffice.org with any questions.</p>
+                I call it <span class="font-monospace"><a target="_blank" href="https://interpretersoffice.org">InterpretersOffice</a></span>.
+        Unfortunately the project has not been updated for so long, it's essentially abandoned.
+        But the source code repository is still <a a target="_blank" href="https://github.com/davidmintz/court-interpreters-office">on Github</a>.</p>
     <h4 id="zen">zen</h4>
     <p>Once upon a time I was a student at a zendo in New York City, drawn to it because I was curious about
         practicing meditation. I participated in formal sittings and certain Zen Buddhist rituals -- chanting and bowing
@@ -106,14 +112,13 @@
     </p>
     <h4 id="running">distance running</h4>
     <p>I didn't start running semi-seriously until I was in my 50s, and have since aged out of the game,
-        though I'm still good for a few easy miles a couple times a week. But there were several years where
+        though I'm still good for a few easy miles a about three times a week. But there were several years where
         I greatly enjoyed training and running races, with respectable age-relative results. Just a couple years before my
         first marathon, the idea of running one was inconceivable. I must have mistakenly believed you had to be an extraordinary
         athlete to be a marathoner at all. Of course it does require considerable effort and reasonably good general health to get fit enough
         to get through it, but this is well within the reach of ordinary people. I was pleasantly astounded to discover how
-        hard running 50 kilometer trail races was <em>not</em>, as long as you pace yourself correctly. The risk of injury is
-        significant, true -- repetitive strain with road running, traumatic injuries from falling on the trails --
-        but it's manageable. So if this is something you've thought about but have never tried, I'd encourage you to go for it.
+        hard running 50 kilometer trail races was <em>not</em>, as long as you pace yourself correctly.
+        So if this is something you've thought about but have never tried, I encourage you to go for it.
     </p>
     <h4 id="music">music</h4>
     <p>To succeed as a professional musician you need talent, determination, resourcefulness, discipline, and luck. Perhaps
