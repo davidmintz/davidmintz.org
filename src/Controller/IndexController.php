@@ -46,5 +46,11 @@ class IndexController extends AbstractController
         return $this->render('index/letter-sdny.html.twig');
     }
 
+    #[Route('/food/{recipe}', name: 'food')]
+    public function food(String $recipe = ''): Response
+    {
+
+        return $this->render('index/food/index.html.twig',['recipe'=>$recipe]);
+    }
 
 }
