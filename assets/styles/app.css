@@ -26,6 +26,6 @@
         display: none;
     }
 }
-main p, ul {
+main p, ul, ol {
     font-family: "Noto Serif Georgian";
 }
