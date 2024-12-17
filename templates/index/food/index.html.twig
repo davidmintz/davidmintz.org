@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}food | {{ parent() }}{% endblock %}
+{% block body %}
+   <h1>cookbook for Mylie</h1>
+
+   {%  if  recipe  %}
+       {%  include "/index/food/#{recipe}.html.twig" %}
+   {% else %}
+       <h3>foreword</h3>
+       <p>The recipes in this little collection are vague in terms of quantity but verbose in their commentary.
+           The latter is because, well, you know. I like to talk. And this is a didactic work, assuming an inexperienced reader.
+           The inexactness of the quantities is mainly because
+       when I cook this stuff, nothing is precisely measured. But I also want to encourage you to get the ideas and
+       make them your own, rather than strictly executing a recipe.</p>
+   {%  endif %}
+    <h3>recipes</h3>
+    <ul>
+         <li><a href="/food/collards">spicy collards</a></li>
+         <li><a href="/food/pasta-bolognese">pasta bolognese</a></li>
+         <li><a href="/food/potato-cabbage-bean-soup">potato, cabbage, cannellini bean soup</a></li>
+         <li><a href="/food/lentils">lentils</a></li>
+    </ul>
+    {% if recipe %}
+    <div class="text-center"><a href="/food">[food]</a></div>
+    {% endif %}
+
+{% endblock %}
