@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\CacheInterface;
+use Twig\Environment;
 
 class IndexController extends AbstractController
 {
@@ -49,7 +50,6 @@ class IndexController extends AbstractController
     #[Route('/food/{recipe}', name: 'food')]
     public function food(String $recipe = ''): Response
     {
-
         return $this->render('index/food/index.html.twig',['recipe'=>$recipe]);
     }
 
@@ -57,6 +57,22 @@ class IndexController extends AbstractController
     public function music(): Response
     {
         return $this->render('index/music/index.html.twig');
+    }
+    #[Route('/{template}', name: 'template')]
+    public function template(Environment $twig, string $template) : Response
+    {
+        $loader = $twig->getLoader();
+        if ($loader->exists("index/$template.html.twig")) {
+
+            return $this->render("index/$template.html.twig",['template' => $template]);
+        } else {
+            /* yes we have to do better than this */
+//            $error = "no such document '$template' exists";
+//            return $this->render('index/index.html.twig',[
+//                'template' => $template, 'answer' => $error
+//            ]);
+            return $this->redirectToRoute('index');
+        }
     }
 
 }
