@@ -1,7 +1,81 @@
 {% extends 'base.html.twig' %}
 {% block title %}music | {{ parent() }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/music.css') }}">
+{% endblock %}
 {% block body %}
-    <h1>music</h1><!--  style="font-size: 400%"-->
+   <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
+    {% set gigs = true %}
+    {% if (gigs) %}<h2>Upcoming!</h2>{%  endif %}
+    <div class="music-hero text-center my-4">
+
+        <h1 class="display-5 fw-semibold mb-2">The Great American Songbook</h1>
+
+        <p class="lead mb-4">
+            Timeless jazz standards by Cole Porter, George Gershwin, Irving Berlin, and others.
+            <em>Também se canta português – bossa nova de Jobim e outros.</em>
+        </p>
+        <p class="mt-3 mb-2 fs-4 fw-semibold">
+            performed by David Mintz, singer/guitarist
+        </p>
+
+
+        <div class="my-4">
+            <img src="{{ asset('images/portrait-with-guitar.jpg') }}" class="img-fluid" style="max-height:60vh" alt="David Mintz with guitar">
+        </div>
+
+        <p class="fs-4 fw-semibold mb-1 gigline">
+            February&nbsp;7,&nbsp;2026&nbsp;3:30&nbsp;pm
+            <span class="d-none d-sm-inline">&bull;</span>
+            <span class="d-block d-sm-inline">
+    West&nbsp;Tisbury&nbsp;Library
+  </span>
+        </p>
+
+
+        <p class="mb-1">free and open to the public</p>
+
+        <p class="mb-4">
+            funded by the
+            <span class="d-block d-sm-inline">
+                <a href="https://mvculturalcouncil.org" target="_blank">Martha’s Vineyard Cultural Council</a>
+            </span>
+
+        </p>
+
+        <p class="mb-3 invite-line">
+            Come and enjoy these beautiful,
+            <span class="d-block d-sm-inline">
+                witty and elegant compositions!
+            </span>
+        </p>
+
+
+        <p class="fst-italic mb-4">
+            Sejam bem-vindos a desfrutar destas belas e elegantes canções!
+        </p>
+
+    </div>
+    <hr class="w-80 mx-auto my-4">
+    <div class="text-center my-4">
+        <h1 class="display-5 fw-semibold mb-2">D &amp; D Duo</h1>
+        <p class="mb-2">
+            <span class="fw-semibold">Darby Patterson</span>
+            <span class="d-none d-sm-inline">and</span>
+            <span class="d-block d-sm-inline fw-semibold">David Mintz</span>
+        </p>
+
+        <p class="mb-2">
+            <span class="fw-bold">Friday, March 6, 2026</span>
+            <span class="d-none d-sm-inline"> | </span>
+            <span class="fw-bold d-block d-sm-inline">Pathways Arts</span>
+        </p>
+
+        <p class="fst-italic mb-0">Further information to follow!</p>
+    </div>
+    <hr class="w-80 mx-auto my-4">
+    <h2>David's Bio</h2>
     <p>I studied classical guitar when I was young, earning an undergraduate degree from the
     Hartt School of Music followed by a Masters at the University of Arizona's School of Music.
         After a few years of concertizing and part-time teaching, I abandoned the guitar
