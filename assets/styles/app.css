@@ -1,5 +1,6 @@
 /* this is how you do it, it appears... */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import './music.css';
 /* ------------------------------------ */
 #banner {
     background: url("../images/20201130_093445.east-chop.jpg") no-repeat;
