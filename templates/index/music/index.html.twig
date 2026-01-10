@@ -4,6 +4,12 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('build/music.css') }}">
 {% endblock %}
+{% block og_meta %}
+    <meta name="description" content="David Mintz is a classically trained guitarist and vocalist specializing in jazz standards. With a straightforward approach that emphasizes the elegance, wit and beauty of the American Songbook, his performances at various venues around Martha's Vineyard have been warmly received." >
+    <meta property="og:title" content="David Mintz, singer/guitarist">
+    <meta property="og:image" content="https://davidmintz.org/images/20201111_134532.jpg">
+    <meta property="og:url" content="https://davidmintz.org/music">
+{% endblock %}
 {% block body %}
    <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
     {% set gigs = true %}
@@ -75,7 +81,7 @@
         <p class="fst-italic mb-0">Further information to follow!</p>
     </div>
     <hr class="w-80 mx-auto my-4">
-    <h2>David's Bio</h2>
+    <h2>Bad Dog David's bio</h2>
     <p>I studied classical guitar when I was young, earning an undergraduate degree from the
     Hartt School of Music followed by a Masters at the University of Arizona's School of Music.
         After a few years of concertizing and part-time teaching, I abandoned the guitar
@@ -84,16 +90,17 @@
     <p>As retirement drew near, I got interested in returning to the guitar, but rather than pursuing the classical
     discipline, I turned to the Great American Songbook &mdash; early to mid-20th century pop songs and jazz standards
         by composers such as Cole Porter, George Gershwin, and Jerome Kern.
-        My approach is intended to be straightforward,
-        striving simply to present these compositions in all their beauty, elegance and wit.
+        My approach is straightforward, striving simply to present these compositions in all their beauty, elegance and wit.
     </p>
+    <p>I have also gotten a few tastes of acting, and greatly enjoyed it &mdash; and did not get booed off the stage.</p>
+    <p>I live in a state of near-continuous bliss in Oak Bluffs with my wife, three cats and dog.</p>
     <p>
         I made <a href="https://youtu.be/tEy6FZpr5e4">this recording</a> at Parr Audio in Oak Bluffs, Massachusetts in December, 2024.
     </p>
     </p>
     <div class="ratio ratio-16x9 mb-3">
         <iframe src="https://www.youtube.com/embed/tEy6FZpr5e4?rel=0" title="David Mintz, singer and guitarist" allowfullscreen></iframe>
-    </div>    <p>My performances in several venues on Martha's Vineyard have been well-received. Audiences like
+    </div><p>My performances in several venues on Martha's Vineyard have been warmly received. Audiences like
         this music, but it's not frequently heard on the island. Please email, call or text me at 201 978-0608
         if you're interested in hiring me.</p>
 {%  endblock %}
