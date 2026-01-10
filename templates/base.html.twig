@@ -4,13 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        {% block og_meta %}
         <meta name="description" content="David E. Mintz is a human being residing on Martha's Vineyard, an island off the coast of Massachussetts, USA.
     He is, among other things, a web developer, Marxist, meditator, father, stepfather, husband, former marathoner, and former Spanish-English interpreter for the
     federal court in New York City.">
         <meta property="og:title" content="David Mintz, homo sapiens">
         <meta property="og:description" content="David E. Mintz is a human being residing in a state of near-continuous bliss on Martha's Vineyard, an island off the coast of Massachussetts, USA. ">
         <meta property="og:image" content="https://davidmintz.org/images/20201111_134532.jpg">
-        <meta property="og:url" content="https://davidmintz.org/S">
+        <meta property="og:url" content="https://davidmintz.org/">
+        {% endblock %}
         <title>{% block title %}David Mintz, homo sapiens{% endblock %}</title>
 {#        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">#}
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
