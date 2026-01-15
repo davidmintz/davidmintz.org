@@ -1,4 +1,7 @@
-/* Keep the hero readable on phones */
+p.credit-note {
+    font-size: 1em;
+}
+/* Keep the hero readable on npm phones */
 @media (max-width: 576px) {
     .music-hero .display-5 {
         font-size: 1.9rem;      /* smaller than Bootstrap display-5 */
@@ -25,15 +28,14 @@
         /* no desktop overrides needed */
     }
 
-    @media (max-width: 576px) {
-        .invite-line {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            max-width: 32ch;
-            margin-inline: auto;
-        }
-    }
-
+    /*@media (max-width: 576px) {*/
+    /*    .invite-line {*/
+    /*        font-size: 0.95rem;*/
+    /*        line-height: 1.4;*/
+    /*        max-width: 32ch;*/
+    /*        margin-inline: auto;*/
+    /*    }*/
+    /*}*/
 
 
 }
