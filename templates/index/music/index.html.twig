@@ -2,7 +2,7 @@
 {% block title %}music | {{ parent() }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('build/music.css') }}">
+    {{ encore_entry_link_tags('music') }}
 {% endblock %}
 {% block og_meta %}
     <meta property="og:description" content="David Mintz is a classically trained guitarist and vocalist specializing in jazz standards. His straightforward approach emphasizes the elegance, wit and beauty of the American Songbook. David's performances at various venues around Martha's Vineyard have been warmly received." >
@@ -16,7 +16,10 @@
     {% if (gigs) %}<h2>Upcoming!</h2>{%  endif %}
     <div class="music-hero text-center my-4">
 
-        <h1 class="display-5 fw-semibold mb-2">The Great American Songbook</h1>
+        <h1 class="display-5 fw-semibold mb-2">The Great American&nbsp;Songbook</h1>
+        <p class="p-2 rounded border border-success text-start credit-note">A recital series funded in part by the
+            Martha’s Vineyard Cultural Council, a local agency
+            which is supported by the Mass Cultural Council, a state agency.</p>
 
         <p class="lead mb-4">
             Timeless jazz standards by Cole Porter, George Gershwin, Irving Berlin, and others.
@@ -42,16 +45,7 @@
 
 
         <p class="mb-1">free and open to the public</p>
-
-        <p class="mb-4">
-            funded by the
-            <span class="d-block d-sm-inline">
-                <a href="https://mvculturalcouncil.org" target="_blank">Martha’s Vineyard Cultural Council</a>
-            </span>
-
-        </p>
-
-        <p class="mb-3 invite-line">
+         <p class="mb-3 invite-line">
             Come and enjoy these beautiful,
             <span class="d-block d-sm-inline">
                 witty and elegant compositions!
