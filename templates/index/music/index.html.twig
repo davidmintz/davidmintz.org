@@ -14,12 +14,12 @@
    <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
     {% set gigs = true %}
     {% if (gigs) %}<h2>Upcoming!</h2>{%  endif %}
-    <div class="music-hero text-center my-4">
+    <p class="p-2 rounded border border-success text-start credit-note">A recital series funded in part by the
+        Martha’s Vineyard Cultural Council, a local agency
+        which is supported by the Mass Cultural Council, a state agency.</p>
+    <div class="music-hero text-center my-4" hidden>{# hide but keep markup around for reference & past event #}
 
         <h1 class="display-5 fw-semibold mb-2">The Great American&nbsp;Songbook</h1>
-        <p class="p-2 rounded border border-success text-start credit-note">A recital series funded in part by the
-            Martha’s Vineyard Cultural Council, a local agency
-            which is supported by the Mass Cultural Council, a state agency.</p>
 
         <p class="lead mb-4">
             Timeless jazz standards by Cole Porter, George Gershwin, Irving Berlin, and others.
@@ -58,7 +58,7 @@
         </p>
 
     </div>
-    <hr class="w-80 mx-auto my-4">
+
     <div class="text-center my-4" id="ddd">
         <h1 class="display-5 fw-semibold mb-2">D &amp; D Duo</h1>
         <p class="mb-2 fw-bold">
