@@ -5,9 +5,18 @@
     {{ encore_entry_link_tags('music') }}
 {% endblock %}
 {% block og_meta %}
+    {# default image #}
+    {% set og_image = 'images/IMG_1775.cropped.monitor-in-background.resized.jpg' %}
+
+    {# temporary promo override (Darby gig) #}
+    {% if "now"|date("Y-m-d") < "2026-04-12" %}
+        {% set og_image = 'images/darby-and-david.cropped.jpg' %}
+    {% endif %}
+
+    <meta property="og:image" content="{{ absolute_url(asset(og_image)) }}">
+    <meta name="twitter:image" content="{{ absolute_url(asset(og_image)) }}">
     <meta property="og:description" content="David Mintz is a classically trained guitarist and vocalist specializing in jazz standards. His straightforward approach emphasizes the elegance, wit and beauty of the American Songbook. David's performances at various venues around Martha's Vineyard have been warmly received." >
     <meta property="og:title" content="David Mintz, singer/guitarist">
-    <meta property="og:image" content="https://davidmintz.org/images/IMG_1775.cropped.monitor-in-background.resized.jpg">
     <meta property="og:url" content="https://davidmintz.org/music">
 {% endblock %}
 {% block body %}
@@ -53,13 +62,11 @@
         </p>
 
 
-        <p class="fst-italic mb-4">
-            Sejam bem-vindos a desfrutar destas belas e elegantes canções!
-        </p>
 
-    </div><!--  hidden block -->
 
-    <div class="my-4" id="ddd">{# hide but keep markup around for reference & past event #}
+    </div><!--  /hidden block -->
+
+    <div class="my-4" id="ddd">{# if hidden, we keep markup around for reference & past event #}
         <h1 class="display-5 fw-semibold mb-2 text-center">D &amp; D Duo</h1>
         <p class="mb-2 fw-bold  text-center">
             <span style="font-size: larger" >Darby Patterson</span>
@@ -74,10 +81,11 @@
         </p>
         <p>
             The duo of singer Darby Patterson and guitarist/singer David Mintz present a program of jazz standards at
-            the Oak Bluffs Library on Saturday, April 11,2026, at 2:00 pm. Their program features standards by 20th-century
+            the Oak Bluffs Library on Saturday, April 11, 2026 at 2:00 pm. Their program features standards by 20th-century
             masters like Cole Porter, Irving Berlin, and George Gershwin, along with bilingual renditions of
-            bossa nova by Antônio Carlos Jobim.
-
+            bossa nova by Antônio Carlos Jobim.</p>
+        <p class="fst-italic mb-4">
+            Sejam bem-vindos a desfrutar destas belas e elegantes canções!
         </p>
         <p>
         Darby and David have been delighting audiences with their combined skills, shared love of vocal jazz, and characteristically goofy stage presence.
