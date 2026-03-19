@@ -6,13 +6,11 @@
 {% endblock %}
 {% block og_meta %}
     {# default image #}
-    {% set og_image = 'images/IMG_1775.cropped.monitor-in-background.resized.jpg' %}
-
-    {# temporary promo override (Darby gig) #}
+    {% set og_image = 'images/david.music-default.jpg' %}
+    {# d & d promo image #}
     {% if "now"|date("Y-m-d") < "2026-04-12" %}
-        {% set og_image = 'images/darby-and-david.cropped.jpg' %}
+        {% set og_image = 'images/darby-and-david.og.jpg' %}
     {% endif %}
-
     <meta property="og:image" content="{{ absolute_url(asset(og_image)) }}">
     <meta name="twitter:image" content="{{ absolute_url(asset(og_image)) }}">
     <meta property="og:description" content="David Mintz is a classically trained guitarist and vocalist specializing in jazz standards. His straightforward approach emphasizes the elegance, wit and beauty of the American Songbook. David's performances at various venues around Martha's Vineyard have been warmly received." >
