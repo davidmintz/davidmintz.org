@@ -11,8 +11,8 @@
 
     {% if "now"|date("Y-m-d") < "2026-04-12" %}
         {% set og_image = 'images/darby-and-david.og.jpg' %}
-        {% set og_title = 'Darby Patterson & David Mintz Duo — April 11, OB Library' %}
-        {% set og_description = 'Jazz standards performed with warmth and wit by Darby Patterson and David Mintz. April 11 on Martha’s Vineyard.' %}
+        {% set og_title = 'Darby Patterson & David Mintz — April 11, OB Library' %}
+        {% set og_description = 'Jazz standards performed with warmth and wit by the D&D Duo, Darby Patterson and David Mintz. April 11, 2:00pm, Oak Bluffs Library, Martha’s Vineyard.' %}
     {% endif %}
 
     <meta property="og:image" content="{{ absolute_url(asset(og_image)) }}">
