@@ -27,3 +27,11 @@ p.credit-note {
         line-height: 1.25;
     }
 }
+
+.music-hero .performer-credit,
+.music-hero .gigline,
+.music-hero .free-line {
+    text-align: center;
+}
+
+.gigline { line-height: 1.2 }
