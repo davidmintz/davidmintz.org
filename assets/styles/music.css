@@ -1,11 +1,20 @@
 p.credit-note {
     font-size: 1em;
+    max-width: 540px;
+    margin-inline: auto;
 }
-/* Keep the hero readable on npm phones */
+
+.music-hero {
+    max-width: 540px;
+    margin-inline: auto;
+    text-align: left;
+}
+
 @media (max-width: 576px) {
     .music-hero .display-5 {
-        font-size: 1.9rem;      /* smaller than Bootstrap display-5 */
+        font-size: 1.8rem;
         line-height: 1.15;
+        text-wrap: balance;
     }
 
     .music-hero .lead {
@@ -14,29 +23,7 @@ p.credit-note {
     }
 
     .music-hero .fs-4 {
-        font-size: 1.15rem !important; /* overrides fs-4 on phones */
+        font-size: 1.15rem !important;
         line-height: 1.25;
     }
-
-    .music-hero .display-5 {
-        font-size: 1.8rem;
-        line-height: 1.15;
-        text-wrap: balance;
-    }
-    /* Invitation line: tuned for mobile, neutral elsewhere */
-    .invite-line {
-        /* no desktop overrides needed */
-    }
-
-    /*@media (max-width: 576px) {*/
-    /*    .invite-line {*/
-    /*        font-size: 0.95rem;*/
-    /*        line-height: 1.4;*/
-    /*        max-width: 32ch;*/
-    /*        margin-inline: auto;*/
-    /*    }*/
-    /*}*/
-
-
 }
-
