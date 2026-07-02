@@ -27,10 +27,13 @@
 {% block body %}
    <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
     {% set gigs = true %}
-    {% if (gigs) %}<h2>Upcoming!</h2>{%  endif %}
-    <p class="p-2 rounded border border-success text-start credit-note">A recital series funded in part by the
+
+    <p class="p-2 rounded border border-success text-start credit-note">
+        <span class="float-end"><img class="img-fluid ms-2" style="max-width: 165px" src="/images/MCC-logo.png" alt="Massachusetts Cultural Council"></span>
+        In 2026 I completed a series of shows funded in part by the
         Martha’s Vineyard Cultural Council, a local agency
-        which is supported by the Mass Cultural Council, a state agency.</p>
+        which is supported by the Massachusetts Cultural Council, a state agency. Thank you, <a
+                href="https://www.mvculturalcouncil.org/" target="_blank">MVCC</a> and <a href="https://massculturalcouncil.org/" target="_blank">MCC!</a></p>
     <div class="music-hero mb-1" >
 
         <h1 class="display-5 fw-semibold mb-2">The Great American&nbsp;Songbook</h1>
@@ -40,7 +43,7 @@
             <em>Também se canta português – bossa nova de Jobim e outros.</em>
         </p>
         <p class="mt-3 mb-2 fs-4 fw-semibold performer-credit">
-            performed by David Mintz, singer/guitarist
+            performed by David Mintz, <span class="text-nowrap">singer/guitarist</span>
         </p>
 
 
@@ -49,7 +52,13 @@
             <br><span class="text-opacity-75">Photo credit: <a href="https://www.instagram.com/memeatball/" target="_blank" rel="noopener">Alex Wright</a></span>
         </div>
 
+<!--
+        <hr class="w-60 mx-auto my-4">
+        <p class="fs-4 fw-semibold mb-1 gigline">
+            👉 Thursday May 21, 2026&nbsp;3:00 pm&nbsp;*<br>
+            Aquinnah Town Hall<br>
 
+        </p>
 
         <hr class="w-60 mx-auto my-4">
         <p class="fs-4 fw-semibold mb-1 gigline">
@@ -59,14 +68,15 @@
         </p>
         <hr class="w-60 mx-auto my-4">
         <p class="fs-4 fw-semibold mb-1 gigline">
-            👉  Saturday June 27 2026&nbsp;3:00 pm<br>
+            👉  Saturday June 27 2026&nbsp;3:00 pm&nbsp;*<br>
             Chilmark Library<br>
             <span class="fs-5">
            522 South Road Road<br>
             Chilmark, MA 02535
                 </span>
         </p>
-        <hr class="w-60 mx-auto my-4">
+-->
+        {% if (gigs) %}<h2>Upcoming!</h2>{%  endif %}
 
         <p class="fs-4 fw-semibold mb-1 gigline">
             👉 Shakespeare in&nbsp;the&nbsp;Amphitheater!<br>
@@ -89,7 +99,6 @@
            Vineyard Haven, MA<br>
                 </span>
         </p>
-        <p class="mb-1 mt-3 p-3 free-line fs-4 border border-2 rounded-2">all free and open to the public</p>
          <p class="mb-3 invite-line mt-4">
             Come and enjoy these beautiful,
             <span class="d-block d-sm-inline">
