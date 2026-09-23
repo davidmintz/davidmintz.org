@@ -43,7 +43,6 @@ p.credit-note {
     border-bottom: 1px solid var(--bs-border-color, #dee2e6);
 }
 .past-gigs li:last-child { border-bottom: 0 }
-.past-gig-date { font-weight: 600 }
 .past-gig-note {
     grid-column: 2;
     font-size: .95em;
