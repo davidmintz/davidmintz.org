@@ -26,7 +26,7 @@
 {% endblock %}
 {% block body %}
    <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
-    {% set gigs = true %}
+    {% set gigs = false %}
 
     <p class="p-2 rounded border border-success text-start credit-note">
         <span class="float-end"><img class="img-fluid ms-2" style="max-width: 165px" src="/images/MCC-logo.png" alt="Massachusetts Cultural Council"></span>
@@ -36,7 +36,7 @@
                 href="https://www.mvculturalcouncil.org/" target="_blank">MVCC</a> and <a href="https://massculturalcouncil.org/" target="_blank">MCC!</a></p>
     <div class="music-hero mb-1" >
 
-        <h1 class="display-5 fw-semibold mb-2">The Great American&nbsp;Songbook</h1>
+        <h1 class="display-5 fw-semibold mb-2">The American&nbsp;Songbook</h1>
 
         <p class="lead mb-4">
             Timeless jazz standards by Cole Porter, George Gershwin, Irving Berlin, and others.
@@ -76,15 +76,9 @@
                 </span>
         </p>
 -->
+{% if (gigs) %}
 <h2 class="mt-3">Upcoming!</h2>
-        <p class="fs-4 fw-semibold mb-1 gigline">
-            👉 Friday September 4&nbsp6:00&nbsp;pm<br>
-            First Fridays Festival<br>
-            Owen Park<br>
-            <span class="fs-5">
-           Vineyard Haven, MA<br>
-                </span>
-        </p>
+        {# gig listings go here #}
         <p class="mb-3 invite-line mt-4">
             Come and enjoy these beautiful,
             <span class="d-block d-sm-inline">
@@ -92,21 +86,45 @@
             </span><br>
             <em> Sejam bem-vindos a desfrutar destas belas e elegantes canções!</em>
         </p>
-
-
-        {% if (gigs) %}<h2 class="my-3">Recently completed</h2>{%  endif %}
-
-        <p class="fs-4 fw-semibold mb-1 gigline">
-            👉 Shakespeare in&nbsp;the&nbsp;Amphitheater!<br>
-            <em>As You Like It</em><br>
-            <span class="fs-5">
-           Vineyard Haven, MA<br>
-                </span>
+{% else %}
+        <p class="mt-4 mb-3">
+            No public performances are on the calendar at the moment &mdash; stay tuned for further announcements!
+            I'm available for private events; see below for how to reach me.
         </p>
-        <p>Yours truly was cast in two supporting roles and performing music in this wonderful comedy,
-            presented by <a href="https://circuitarts.org" target="_blank">Circuit Arts</a>,
-            that closed on August 8. I thank the superb cast, crew, and audiences that make it real.
-        </p>
+{% endif %}
+
+        {# newest first; kind is music or theater; venue and note may contain markup #}
+        {% set past_gigs = [
+            { kind: 'music', date: 'September 4, 2026', venue: 'First Fridays Festival, Owen Park', town: 'Vineyard Haven' },
+            { kind: 'music', date: 'August 9 & 17, 2026', venue: 'Built on Stilts', town: 'Oak Bluffs',
+              note: '<em>Bossa Nova Bad Dog</em>: music of Antônio Carlos Jobim' },
+            { kind: 'theater', date: 'July 15 – August 8, 2026', venue: '<em>As You Like It</em>, Shakespeare in the Amphitheater',
+              town: 'Tisbury Amphitheater',
+              note: 'Yours truly was double-cast as Amiens and Corin, and did some playing, singing and arranging &mdash; presented by <a href="https://circuitarts.org" target="_blank" rel="noopener">Circuit Arts</a>' },
+            { kind: 'theater', date: 'July – August 2026', venue: 'Fabulists Children’s Theater', town: 'Tisbury Amphitheater',
+              note: 'This was my second season with the incomparably delightful Fabulists &mdash; presented by <a href="https://circuitarts.org" target="_blank" rel="noopener">Circuit Arts</a>' },
+            { kind: 'music', date: 'June 27, 2026', venue: 'Chilmark Free Public Library', town: 'Chilmark' },
+            { kind: 'music', date: 'June 24, 2026', venue: 'West Tisbury Farmers Market', town: 'West Tisbury' },
+            { kind: 'music', date: 'May 30, 2026', venue: 'Edgartown Public Library', town: 'Edgartown' },
+            { kind: 'music', date: 'May 21, 2026', venue: 'Aquinnah Town Hall', town: 'Aquinnah' },
+            { kind: 'music', date: 'April 11, 2026', venue: 'Oak Bluffs Public Library', town: 'Oak Bluffs', note: 'D&amp;D Duo &mdash; with the marvelous Darby Patterson' },
+            { kind: 'music', date: 'March 6, 2026', venue: 'Pathways Arts', town: 'Chilmark', note: 'D&amp;D Duo &mdash; with Darby Patterson' },
+            { kind: 'music', date: 'February 11, 2026', venue: 'Up-Island Council on Aging (Howes House)', town: 'West Tisbury' },
+            { kind: 'music', date: 'February 7, 2026', venue: 'West Tisbury Free Public Library', town: 'West Tisbury' },
+        ] %}
+        {% set gig_icons = { music: '🎸', theater: '🎭' } %}
+
+        <h2 class="my-3">Recent performances</h2>
+        <ul class="list-unstyled past-gigs">
+        {% for gig in past_gigs %}
+            <li>
+                <span class="past-gig-date">{{ gig.date }}</span>
+                <span class="past-gig-venue"><span role="img" aria-label="{{ gig.kind }}" title="{{ gig.kind }}">{{ gig_icons[gig.kind] }}</span>
+                    {{ gig.venue|raw }} &middot; <span class="text-nowrap">{{ gig.town }}</span></span>
+                {% if gig.note is defined %}<span class="past-gig-note">{{ gig.note|raw }}</span>{% endif %}
+            </li>
+        {% endfor %}
+        </ul>
 
     </div>
 

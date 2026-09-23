@@ -35,3 +35,22 @@ p.credit-note {
 }
 
 .gigline { line-height: 1.2 }
+.past-gigs li {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    column-gap: 1rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--bs-border-color, #dee2e6);
+}
+.past-gigs li:last-child { border-bottom: 0 }
+.past-gig-date { font-weight: 600 }
+.past-gig-note {
+    grid-column: 2;
+    font-size: .95em;
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+@media (max-width: 576px) {
+    .past-gigs li { grid-template-columns: 1fr }
+    .past-gig-note { grid-column: 1 }
+}
