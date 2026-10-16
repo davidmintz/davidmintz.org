@@ -1,4 +1,14 @@
 {% extends 'base.html.twig' %}
+{# one gig as a list item; kind is music or theater; venue and note may contain markup #}
+{% macro gig_item(gig) %}
+    {% set gig_icons = { music: '🎸', theater: '🎭' } %}
+            <li>
+                <span class="past-gig-date">{{ gig.date }}</span>
+                <span class="past-gig-venue"><span role="img" aria-label="{{ gig.kind }}" title="{{ gig.kind }}">{{ gig_icons[gig.kind] }}</span>
+                    {{ gig.venue|raw }}, <span class="text-nowrap">{{ gig.town }}{% if gig.funded is defined %}&nbsp;*{% endif %}</span></span>
+                {% if gig.note is defined %}<span class="past-gig-note">{{ gig.note|raw }}</span>{% endif %}
+            </li>
+{% endmacro %}
 {% block title %}music | {{ parent() }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
@@ -25,6 +35,7 @@
     <meta name="twitter:image" content="{{ absolute_url(asset(og_image)) }}">
 {% endblock %}
 {% block body %}
+{% import _self as m %}
    <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
     {% set gigs = true %}
 
@@ -77,17 +88,15 @@
         </p>
 -->
 {% if (gigs) %}
-<h2 class="mt-3">Upcoming Performances</h2>
-        <p class="fs-4 fw-semibold mb-1 gigline">
-            🎭 <em>Rudolph</em>, the musical<br>
-            Island Theater Workshop<br>
-            Katharine Cornell Theatre, <span class="text-nowrap">Vineyard Haven</span><br>
-            <span class="fs-5">Fri Dec 4 &middot; Sat Dec 5 (two shows) &middot; Sun Dec 6<br>
-            times TBA</span>
-        </p>
-        <p class="mb-3 mt-3 text-center">
-            Featuring yours truly as Santa Claus, in my Island Theater Workshop debut!
-        </p>
+        <h2 class="my-3">Upcoming performances</h2>
+        <div class="border-start border-3 border-success ps-3 mb-4 text-start">
+            <p class="fs-4 mb-1">🎭 <em>Rudolph</em>, the musical</p>
+            <p class="mb-2">Island Theater Workshop<br>
+                Katharine Cornell Theatre, <span class="text-nowrap">Vineyard Haven</span></p>
+            <p class="mb-2 fw-bold">Fri Dec 4 &middot; Sat Dec 5 (two shows) &middot; Sun Dec 6<br>
+                <span class="fw-normal">times TBA</span></p>
+            <p class="mb-0 past-gig-note">Featuring yours truly as Santa Claus, in my Island Theater Workshop debut!</p>
+        </div>
         {# for music gigs:
         <p class="mb-3 invite-line mt-4">
             Come and enjoy these beautiful,
@@ -104,7 +113,7 @@
         </p>
 {% endif %}
 
-        {# newest first; kind is music or theater; venue and note may contain markup #}
+        {# newest first #}
         {% set past_gigs = [
             { kind: 'music', date: 'September 4, 2026', venue: 'First Fridays Festival, Owen Park', town: 'Vineyard Haven' },
             { kind: 'music', date: 'August 9 & 17, 2026', venue: 'Built on Stilts', town: 'Oak Bluffs',
@@ -123,18 +132,10 @@
             { kind: 'music', date: 'February 11, 2026', venue: 'Up-Island Council on Aging (Howes House)', town: 'West Tisbury', funded: true },
             { kind: 'music', date: 'February 7, 2026', venue: 'West Tisbury Free Public Library', town: 'West Tisbury', funded: true },
         ] %}
-        {% set gig_icons = { music: '🎸', theater: '🎭' } %}
 
         <h2 class="my-3">Recent performances</h2>
         <ul class="list-unstyled past-gigs">
-        {% for gig in past_gigs %}
-            <li>
-                <span class="past-gig-date">{{ gig.date }}</span>
-                <span class="past-gig-venue"><span role="img" aria-label="{{ gig.kind }}" title="{{ gig.kind }}">{{ gig_icons[gig.kind] }}</span>
-                    {{ gig.venue|raw }} &middot; <span class="text-nowrap">{{ gig.town }}{% if gig.funded is defined %}&nbsp;*{% endif %}</span></span>
-                {% if gig.note is defined %}<span class="past-gig-note">{{ gig.note|raw }}</span>{% endif %}
-            </li>
-        {% endfor %}
+        {% for gig in past_gigs %}{{ m.gig_item(gig) }}{% endfor %}
         </ul>
         <p class="small fst-italic text-start">
             * Funded in part by a grant from the Martha’s Vineyard Cultural Council, a local agency
