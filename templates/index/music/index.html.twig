@@ -26,7 +26,7 @@
 {% endblock %}
 {% block body %}
    <!-- <h1>music</h1> --><!--  style="font-size: 400%"-->
-    {% set gigs = false %}
+    {% set gigs = true %}
 
     <p class="p-2 rounded border border-success text-start credit-note">
         <span class="float-end"><img class="img-fluid ms-2" style="max-width: 165px" src="/images/MCC-logo.png" alt="Massachusetts Cultural Council"></span>
@@ -77,8 +77,18 @@
         </p>
 -->
 {% if (gigs) %}
-<h2 class="mt-3">Upcoming!</h2>
-        {# gig listings go here #}
+<h2 class="mt-3">Upcoming Performances</h2>
+        <p class="fs-4 fw-semibold mb-1 gigline">
+            🎭 <em>Rudolph</em>, the musical<br>
+            Island Theater Workshop<br>
+            Katharine Cornell Theatre, <span class="text-nowrap">Vineyard Haven</span><br>
+            <span class="fs-5">Fri Dec 4 &middot; Sat Dec 5 (two shows) &middot; Sun Dec 6<br>
+            times TBA</span>
+        </p>
+        <p class="mb-3 mt-3 text-center">
+            Featuring yours truly as Santa Claus, in my Island Theater Workshop debut!
+        </p>
+        {# for music gigs:
         <p class="mb-3 invite-line mt-4">
             Come and enjoy these beautiful,
             <span class="d-block d-sm-inline">
@@ -86,6 +96,7 @@
             </span><br>
             <em> Sejam bem-vindos a desfrutar destas belas e elegantes canções!</em>
         </p>
+        #}
 {% else %}
         <p class="mt-4 mb-3">
             No public performances are on the calendar at the moment &mdash; stay tuned for further announcements!
