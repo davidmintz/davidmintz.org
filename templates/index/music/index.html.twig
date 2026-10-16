@@ -103,14 +103,14 @@
               note: 'Yours truly was double-cast as Amiens and Corin, and did some playing, singing and arranging &mdash; presented by <a href="https://circuitarts.org" target="_blank" rel="noopener">Circuit Arts</a>' },
             { kind: 'theater', date: 'July – August 2026', venue: 'Fabulists Children’s Theater', town: 'Tisbury Amphitheater',
               note: 'This was my second season with the incomparably delightful Fabulists &mdash; presented by <a href="https://circuitarts.org" target="_blank" rel="noopener">Circuit Arts</a>' },
-            { kind: 'music', date: 'June 27, 2026', venue: 'Chilmark Free Public Library', town: 'Chilmark' },
+            { kind: 'music', date: 'June 27, 2026', venue: 'Chilmark Free Public Library', town: 'Chilmark', funded: true },
             { kind: 'music', date: 'June 24, 2026', venue: 'West Tisbury Farmers Market', town: 'West Tisbury' },
             { kind: 'music', date: 'May 30, 2026', venue: 'Edgartown Public Library', town: 'Edgartown', note: 'with the fantastic Lucas Ostinato sitting in' },
-            { kind: 'music', date: 'May 21, 2026', venue: 'Aquinnah Town Hall', town: 'Aquinnah' },
-            { kind: 'music', date: 'April 11, 2026', venue: 'Oak Bluffs Public Library', town: 'Oak Bluffs', note: 'D&amp;D Duo &mdash; with the marvelous Darby Patterson' },
-            { kind: 'music', date: 'March 6, 2026', venue: 'Pathways Arts', town: 'Chilmark', note: 'D&amp;D Duo &mdash; with Darby Patterson' },
-            { kind: 'music', date: 'February 11, 2026', venue: 'Up-Island Council on Aging (Howes House)', town: 'West Tisbury' },
-            { kind: 'music', date: 'February 7, 2026', venue: 'West Tisbury Free Public Library', town: 'West Tisbury' },
+            { kind: 'music', date: 'May 21, 2026', venue: 'Aquinnah Town Hall', town: 'Aquinnah', funded: true },
+            { kind: 'music', date: 'April 11, 2026', venue: 'Oak Bluffs Public Library', town: 'Oak Bluffs', funded: true, note: 'D&amp;D Duo &mdash; with the marvelous Darby Patterson' },
+            { kind: 'music', date: 'March 6, 2026', venue: 'Pathways Arts', town: 'Chilmark', funded: true, note: 'D&amp;D Duo &mdash; with Darby Patterson' },
+            { kind: 'music', date: 'February 11, 2026', venue: 'Up-Island Council on Aging (Howes House)', town: 'West Tisbury', funded: true },
+            { kind: 'music', date: 'February 7, 2026', venue: 'West Tisbury Free Public Library', town: 'West Tisbury', funded: true },
         ] %}
         {% set gig_icons = { music: '🎸', theater: '🎭' } %}
 
@@ -120,11 +120,15 @@
             <li>
                 <span class="past-gig-date">{{ gig.date }}</span>
                 <span class="past-gig-venue"><span role="img" aria-label="{{ gig.kind }}" title="{{ gig.kind }}">{{ gig_icons[gig.kind] }}</span>
-                    {{ gig.venue|raw }} &middot; <span class="text-nowrap">{{ gig.town }}</span></span>
+                    {{ gig.venue|raw }} &middot; <span class="text-nowrap">{{ gig.town }}{% if gig.funded is defined %}&nbsp;*{% endif %}</span></span>
                 {% if gig.note is defined %}<span class="past-gig-note">{{ gig.note|raw }}</span>{% endif %}
             </li>
         {% endfor %}
         </ul>
+        <p class="small fst-italic text-start">
+            * Funded in part by a grant from the Martha’s Vineyard Cultural Council, a local agency
+            which is supported by Mass Cultural Council, a state agency.
+        </p>
 
     </div>
 
